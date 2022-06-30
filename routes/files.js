@@ -6,6 +6,9 @@ const pgp = require("pg-promise")(/*options*/);
 const db = pgp("postgres://samoylovdb:123@database:5432/todo");
 const multer = require("multer");
 
+router.use(express.json());
+router.use(express.urlencoded({ extended: true }));
+
 let dir = "./upload"
 
 if (!fs.existsSync(dir)) {

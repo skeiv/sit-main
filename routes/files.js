@@ -3,7 +3,7 @@ const {errors} = require("pg-promise");
 const router = express.Router();
 const fs = require("fs");
 const pgp = require("pg-promise")(/*options*/);
-const db = pgp("postgres://samoylovdb:123@database:5432/files");
+const db = pgp("postgres://samoylovdb:123@database:5432/todo");
 const multer = require("multer");
 
 let dir = "./upload"

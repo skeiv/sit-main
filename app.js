@@ -50,6 +50,6 @@ db.none('alter table tasks owner to samoylovdb')
 db.none('create unique index if not exists tasks_id_uindex on tasks (id)')
 db.none('create table if not exists files (id serial constraint files_pk primary key, name varchar, size varchar, path varchar)')
 db.none('create unique index if not exists files_id_uindex on files (id)')
-db.none('alter table tasks files to samoylovdb')
+db.none('alter table files owner to samoylovdb')
 
 module.exports = app;

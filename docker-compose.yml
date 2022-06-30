@@ -1,0 +1,27 @@
+version: '3'
+services:
+  back:
+    image: sketiv/sit_back:v0.1.2
+    container_name: back
+    ports:
+      - 3000:3000
+    networks:
+      - sit_network
+    restart: always
+  database:
+    image: postgres:latest
+    container_name: database
+    environment:
+      POSTGRES_USER: samoylovdb
+      POSTGRES_PASSWORD: 123
+      POSTGRES_DB: todo
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - sit_db:/var/lib/postgresql/data
+    networks:
+      - sit_network
+    restart: always
+volumes:
+  sit_db:
+networks:
+  sit_network:

@@ -1,7 +1,7 @@
 version: '3'
 services:
   back:
-    image: sketiv/sit_back:v0.1.2
+    image: sketiv/sit_back:v0.1.1
     container_name: back
     ports:
       - 3000:3000
